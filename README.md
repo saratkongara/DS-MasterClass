@@ -1,2 +1,3 @@
 # DS-MasterClass
-Data structures and algorithms implementation in JavaScript
+
+Data structures and algorithms implementation in JavaScript. These are practice code exercises from the Udemy Course - The Missing Computer Science and Coding Interview Bootcamp by Colt Steele. After 25 years of taking the graduate computer science class on algorithms, I decided to take out the Cormen book "Introduction to Algorithms" and exercise the algorithmic thinking part of the brain. I picked the above course as the language syntax is minimilistic (Javascript) and the code almost reads as psuedocode. Pretty close to the code in the book. I am having a blast so far and like to continue my recreational programming adventures and apply the data structures and algorithms learned here in future hobby programming projects.
