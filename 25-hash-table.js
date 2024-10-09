@@ -23,7 +23,18 @@ class HashTable {
       this.keyMap[index] = [];
     }
 
-    this.keyMap[index].push([key, value]);
+    let keyExists = false;
+
+    for (let pairArray of this.keyMap[index]) {
+      if (pairArray[0] === key) {
+        pairArray[1] = value;
+        keyExists = true;
+      }
+    }
+
+    if (!keyExists) {
+      this.keyMap[index].push([key, value]);
+    }
   }
 
   get(key) {
@@ -42,12 +53,46 @@ class HashTable {
 
     return undefined;
   }
+
+  keys() {
+    let keysArray = [];
+
+    for (let element of this.keyMap) {
+      if (element) {
+        for (let pairArray of element) {
+          keysArray.push(pairArray[0]);
+        }
+      }
+    }
+
+    return keysArray;
+  }
+
+  values() {
+    let valuesSet = new Set();
+
+    for (let element of this.keyMap) {
+      if (element) {
+        for (let pairArray of element) {
+          valuesSet.add(pairArray[1]);
+        }
+      }
+    }
+
+    return Array.from(valuesSet.values());
+  }
 }
 
 let ht = new HashTable();
 ht.set("pink", "#007699");
 ht.set("blue", "#870012");
-console.log(ht.keyMap);
+ht.set("blue", "#45FA32");
 
 let hexCode = ht.get("pink");
 console.log(hexCode);
+
+let keys = ht.keys();
+console.log(keys);
+
+let values = ht.values();
+console.log(values);
